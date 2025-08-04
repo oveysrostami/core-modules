@@ -4,13 +4,13 @@
   "type": "library",
   "autoload": {
     "psr-4": {
-      "Oveis\\CoreModules\\": "src/"
+      "Oveys\\CoreModules\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Oveis\\CoreModules\\CoreServiceProvider"
+        "Oveys\\CoreModules\\CoreServiceProvider"
       ]
     }
   },

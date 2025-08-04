@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Oveis\CoreModules;
+namespace Oveys\CoreModules;
 
 use Illuminate\Support\ServiceProvider;
 
