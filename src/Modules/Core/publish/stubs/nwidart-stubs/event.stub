@@ -1,0 +1,46 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Illuminate\Broadcasting\Channel;
+use Illuminate\Broadcasting\InteractsWithSockets;
+use Illuminate\Broadcasting\PresenceChannel;
+use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
+use Modules\EventManager\Interfaces\LoggableEventPayloadInterface;
+use Modules\EventManager\Interfaces\ShouldBeLogged;
+use Modules\EventManager\Traits\ShouldBeLoggedTrait;
+
+class $CLASS$ implements ShouldBeLogged,LoggableEventPayloadInterface
+{
+    use Dispatchable, InteractsWithSockets, SerializesModels, ShouldBeLoggedTrait;
+
+    /**
+     * Create a new event instance.
+     */
+    public function __construct() {}
+
+    /**
+     * Get the channels the event should be broadcast on.
+     */
+    public function broadcastOn(): array
+    {
+        return [
+            new PrivateChannel('channel-name'),
+        ];
+    }
+
+    public function toLoggablePayload(): array
+        {
+            return [];
+        }
+
+        public static function fromLoggablePayload(array $payload): static
+        {
+            $notifiable = app($payload['notifiable_type'])::findOrFail($payload['notifiable_id']);
+
+            return new static();
+        }
+}

@@ -1,0 +1,30 @@
+<?php
+
+namespace Modules\$STUDLY_NAME$\Console;
+
+use Modules\Core\Console\ModuleInstall;
+
+class $STUDLY_NAME$Install extends ModuleInstall
+{
+    /**
+     * The name and signature of the console command.
+     */
+    protected $signature = '$LOWER_NAME$:install';
+
+    /**
+     * The console command description.
+     */
+    protected $description = 'Command description.';
+
+
+    /**
+     * Execute the console command.
+     */
+    public function handle() {}
+
+    protected function getModuleName(): string
+        {
+            return '$STUDLY_NAME$';
+        }
+
+}

@@ -1,0 +1,7 @@
+<?php
+
+namespace $CLASS_NAMESPACE$;
+
+use Modules\Core\Http\Controllers\V1\BaseController;
+
+class $CLASS$ extends BaseController {}
